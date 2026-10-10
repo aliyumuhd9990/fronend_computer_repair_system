@@ -1,3 +1,4 @@
+import React from "react";
 import { statusLabel } from "../utils/helpers";
 
 const styles = {
