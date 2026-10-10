@@ -3,7 +3,7 @@ import axios from "axios";
 const api = axios.create({
   baseURL:
     import.meta.env.VITE_API_BASE_URL ||
-    "https://backend-computer-repair-system.onrender.com/api",
+    "https://backend-computer-repair-system.onrender.com",
   headers: { "Content-Type": "application/json" },
 });
 
@@ -32,7 +32,7 @@ api.interceptors.response.use(
           if (!refreshPromise) {
             refreshPromise = axios
               .post(
-                `${import.meta.env.VITE_API_BASE_URL || "https://backend-computer-repair-system.onrender.com/api"}/auth/refresh/`,
+                `${import.meta.env.VITE_API_BASE_URL || "https://backend-computer-repair-system.onrender.com"}/auth/refresh/`,
                 { refresh },
               )
               .finally(() => {
