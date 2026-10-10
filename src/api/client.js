@@ -1,12 +1,13 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL:
-    import.meta.env.VITE_API_BASE_URL ||
-    "https://backend-computer-repair-system.onrender.com",
-  headers: { "Content-Type": "application/json" },
+baseURL:
+import.meta.env.VITE_API_BASE_URL ||
+"https://backend-computer-repair-system.onrender.com",
+headers: {
+"Content-Type": "application/json",
+},
 });
-
 api.interceptors.request.use((config) => {
   const access = localStorage.getItem("fixdesk_access");
   if (access) config.headers.Authorization = `Bearer ${access}`;
